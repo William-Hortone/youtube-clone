@@ -12,19 +12,22 @@ import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 
-export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
+// export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
+// import logo from "../../assets/logo.png";
 
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
-  { name: "JS Mastery", icon: <CodeIcon /> },
-  { name: "Coding", icon: <CodeIcon /> },
+  { name: "MrBeast", icon: <TheaterComedyIcon /> },
+  { name: "Loguito", icon: <FitnessCenterIcon /> },
+  { name: "Benjamin Code", icon: <CodeIcon /> },
   { name: "ReactJS", icon: <CodeIcon /> },
-  { name: "NextJS", icon: <CodeIcon /> },
   { name: "Music", icon: <MusicNoteIcon /> },
   { name: "Education", icon: <SchoolIcon /> },
   { name: "Podcast", icon: <GraphicEqIcon /> },
   { name: "Movie", icon: <OndemandVideoIcon /> },
+  { name: "Coding", icon: <CodeIcon /> },
   { name: "Gaming", icon: <SportsEsportsIcon /> },
+  { name: "NextJS", icon: <CodeIcon /> },
   { name: "Live", icon: <LiveTvIcon /> },
   { name: "Sport", icon: <FitnessCenterIcon /> },
   { name: "Fashion", icon: <CheckroomIcon /> },
@@ -37,8 +40,8 @@ export const categories = [
 export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
 export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
 export const demoVideoUrl = "/video/GDa8kZLNhJ4";
-export const demoChannelTitle = "JavaScript Mastery";
+export const demoChannelTitle = "William Hortone Dev";
 export const demoVideoTitle =
-  "Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI";
+  "How to clone Linkedin part 2/2 || With Responsive design and infinity scroll ||";
 export const demoProfilePicture =
   "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
