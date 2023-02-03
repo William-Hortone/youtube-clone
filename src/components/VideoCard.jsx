@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import {
   demoThumbnailUrl,
-  demoVideoTitle,
   demoVideoUrl,
-  demoChannelTitle,
+  demoVideoTitle,
   demoChannelUrl,
+  demoChannelTitle,
 } from "../utils/constants";
 
 const VideoCard = ({
@@ -16,45 +16,41 @@ const VideoCard = ({
     id: { videoId },
     snippet,
   },
-}) => {
-  return (
-    <Card
-      sx={{
-        width: { md: "320px", xs: "100%" },
-        boxShadow: "none",
-        borderRadius: 0,
-        height: { md: "300px", xs: "250px" },
-      }}
-    >
+}) => (
+  <Card
+    sx={{
+      width: { xs: "100%", sm: "358px", md: "320px" },
+      boxShadow: "none",
+      borderRadius: 0,
+    }}
+  >
+    <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
+      <CardMedia
+        image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+        alt={snippet?.title}
+        sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
+      />
+    </Link>
+    <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-        <CardMedia
-          sx={{ width: 358, height: 180 }}
-          image={snippet?.thumbnails?.high?.url}
-          alt={snippet?.title}
-        />
+        <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+          {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+        </Typography>
       </Link>
-      <CardContent sx={{ background: "#1e1e1e", height: "106px" }}>
-        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-          <Typography variant="subtitle1" fontWeight="bold" color="#fff">
-            {snippet?.title.slice(0, 40) || demoVideoTitle.slice(0, 40)}
-          </Typography>
-        </Link>
-        <Link
-          to={
-            snippet?.channelId
-              ? `/channel/${snippet?.channelId}`
-              : demoChannelUrl
-          }
-        >
-          <Typography variant="subtitle2" fontWeight="bold" color="gray">
-            {snippet?.channelTitle.slice(0, 40) ||
-              demoChannelTitle.slice(0, 40)}
-            <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
-          </Typography>
-        </Link>
-      </CardContent>
-    </Card>
-  );
-};
+      <Link
+        to={
+          snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl
+        }
+      >
+        <Typography variant="subtitle2" color="gray">
+          {snippet?.channelTitle || demoChannelTitle}
+          <CheckCircleIcon
+            sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
+          />
+        </Typography>
+      </Link>
+    </CardContent>
+  </Card>
+);
 
 export default VideoCard;
