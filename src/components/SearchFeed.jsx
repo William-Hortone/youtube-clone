@@ -7,7 +7,6 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const SearchFeed = () => {
   const { searchTerm } = useParams();
-  // const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {

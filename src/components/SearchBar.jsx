@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
